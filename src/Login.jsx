@@ -88,11 +88,20 @@ const Login = () => {
 
     if (!verifyOTP) {
       // console.warn(SERVERPATH + "/api/check/" + formData["email"]);
-      try {
+     
+      
+      // try {
+      //   const response = await axios.post(
+      //     SERVERPATH + "/api/check/" + formData["email"] + "/" + "password",
+      //     { passcode: formData["password"] }
+      //   );
+
+        try {
         const response = await axios.post(
-          SERVERPATH + "/api/check/" + formData["email"] + "/" + "password",
+          SERVERPATH + "/api/check/" + formData["email"],
           { passcode: formData["password"] }
         );
+        
         // console.warn(response.data);
 
         if (response.data.is_account_available == "false") {
