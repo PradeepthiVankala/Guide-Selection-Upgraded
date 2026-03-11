@@ -90,17 +90,17 @@ const Login = () => {
       // console.warn(SERVERPATH + "/api/check/" + formData["email"]);
      
       
-      // try {
-      //   const response = await axios.post(
-      //     SERVERPATH + "/api/check/" + formData["email"] + "/" + "password",
-      //     { passcode: formData["password"] }
-      //   );
-
-        try {
+      try {
         const response = await axios.post(
-          SERVERPATH + "/api/check/" + formData["email"],
+          SERVERPATH + "/api/check/" + formData["email"] + "/" + "password",
           { passcode: formData["password"] }
         );
+
+        // try {
+        // const response = await axios.post(
+        //   SERVERPATH + "/api/check/" + formData["email"],
+        //   { passcode: formData["password"] }
+        // );
         
         // console.warn(response.data);
 
